@@ -12,9 +12,4 @@ class Person extends Model
     protected $fillable = ['name'];
 
     protected $hidden = ['created_at', 'updated_at'];
-
-    protected $casted = [
-        'updated_at' => 'datetime',
-        'created_at' => 'datetime'
-    ];
 }

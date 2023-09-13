@@ -15,9 +15,7 @@ class PersonController extends Controller
     public function index()
     {
         $data = Person::all();
-        return response()->json([
-            'data' => $data
-        ]);
+        return response(['data' => $data]);
     }
 
 
@@ -29,8 +27,8 @@ class PersonController extends Controller
         $person = Person::query()->create([
             'name' => $request->name,
         ]);
-        return response()->json([
-            'message' => 'Record created!',
+        return response([
+            'message' => 'Person created!',
             'person' => $person
         ], 200);
     }
@@ -43,9 +41,9 @@ class PersonController extends Controller
         try {
             $person = Person::findOrFail($id);
         } catch (Throwable $th) {
-            return response(['message' => 'No record found'], 404);
+            return response(['error' => 'No record found'], 404);
         }
-        return response()->json([
+        return response([
             'person' => $person,
         ], 200);
     }
@@ -58,7 +56,7 @@ class PersonController extends Controller
         try {
             $person = Person::query()->findOrFail($id);
         } catch (Throwable $th) {
-            return response(['message' => 'No record found'], 404);
+            return response(['error' => 'No record found'], 404);
         }
 
         $person->update([
@@ -66,7 +64,9 @@ class PersonController extends Controller
         ]);
 
         if($person){
-            return response(['message' => 'Record updated!'], 200);
+            return response([
+                'message' => 'Record updated!'
+        ], 200);
         }
     }
 

@@ -34,7 +34,7 @@ Before using the Person API, ensure you have the following prerequisites:
 
 ### Installation
 
-Follow these steps to set up and run the Person API:
+Follow these steps to set up and run the Person API: [Detailed Steps](https://github.com/rahmanakorede442/hng_task_two/blob/master/README.md)
 
 1. Clone the project from the remote repository
 ```bash
@@ -44,11 +44,11 @@ git clone
 ```bash
 cd hng_task_two
 ```
-3. install all dependencies managed by composer
+3. Install all dependencies managed by composer
 ```bash
 composer install
 ```
-4. Copy the .env file
+4. Copy the .env file from the existing .env.example
 ```bash
 cp .env.example .env
 ```
@@ -56,7 +56,7 @@ cp .env.example .env
 ```bash
 php artisan key:generate
 ```
-6. migrate the migration files
+6. migrate the migration files to the local/remote database
 ```bash
 php artisan migrate
 ```
@@ -75,7 +75,7 @@ The API provides the following endpoints for managing the person resource:
 
 - **Endpoint**: `POST /api/persons`
 - **Headers**: `Content-Type: application/json Accept: application/json`
-- **Request Body**: JSON object with person information, including `name`, `email`, and `age`.
+- **Request Body**: JSON object with person information, such as `name` .
 - **Response**: JSON object of the created person with an auto-generated `id`.
     
 
@@ -90,22 +90,22 @@ The API provides the following endpoints for managing the person resource:
 
 - **Endpoint**: `GET /api/{user_id}`
 - **Headers**: `Content-Type: application/json Accept: application/json`
-- **Response**: JSON object of the person with the specified `id` or customized error message (404) if person not found.
+- **Response**: JSON object of the person with the specified `id` or customized error message **(404)** if person not found.
     
 
 ### 4\. Update a Person
 
 - **Endpoint**: `PUT /api/{user_id}`
 - **Headers**: `Content-Type: application/json Accept: application/json`
-- **Request Body**: JSON object with updated person information, including `name`, `email`, and `age`.
-- **Response**: JSON object of the updated person or customized error message (404) if person not found.
+- **Request Body**: JSON object with updated person information, such as `name`.
+- **Response**: JSON object of the updated person or customized error message **(404)** if person not found.
     
 
 ### 5\. Delete a Person
 
 - **Endpoint**: `DELETE /api/{user_id}`
 - **Headers**: `Content-Type: application/json Accept: application/json`
-- **Response**: JSON object confirming the deletion.
+- **Response**: JSON object of success message confirming the deletion.
     
 
 ## Request and Response Examples
@@ -121,20 +121,24 @@ Here are some examples of how to use the API:
     "name": "Dominic Toretto",
 }
 ```
-- Response: 
+- Responses: 
+
 >Status code: 200
+
 ```javascript
 {  
     "id":1,
     "name": "Dominic Toretto"
 }
 ```
+
 ### 2\. Get All Persons
 
 - `GET /api/persons`
-- Response
+- Responses:
 
 >Status code: 200
+
 ```javascript
 [
     {  
@@ -142,7 +146,7 @@ Here are some examples of how to use the API:
     },
     {  
         "name" : "Ifekunle",
-    }   // More persons...
+    },   // More persons...
 ] 
 ```
     
@@ -150,7 +154,9 @@ Here are some examples of how to use the API:
 ### 3\. Get a Person by ID
 
 - `GET /api/persons/1`
-- Status code: 200
+- Responses:
+
+>Status code: 200
 
 ```javascript
 {  
@@ -158,12 +164,12 @@ Here are some examples of how to use the API:
     "name" : "Akorede Lamidi"
 }
 ```
- - Status code: 404
+
+>Status code: 404
 
 ```javascript
 {  
-    "error" : "Record not found!",
-    "code" : 404
+    "error" : "Record not found!"
 }
 ```
 ### 4\. Update a Person
@@ -173,22 +179,19 @@ Here are some examples of how to use the API:
 
 ```javascript
 {
-    "name" : "Akorede Lamidi"
+    "name" : "Akorede Gabriel"
 }
 ```
 
-- Response: 200
+>Response: 200
+
 ```javascript
 {  
     "message" : " Record updated!",
-    "person" : {
-    "id" : 1,
-    "name" : "Akorede Lamidi"
-    }
 }
 ```
 
-- Response: 404
+>Response: 404
     
  ```javascript
 {  
@@ -199,18 +202,19 @@ Here are some examples of how to use the API:
 
 - `DELETE /api/1`
 
-- Response: 200
+>Response: 200
 
 ```javascript
 {
     "message": "Person with ID 1 has been deleted."
 }
 ```
+
 ---
 
 ## Validation
 
-The API includes basic validation rules for request data. Ensure your requests follow the specified data format and constraints to avoid validation errors.
+The API includes basic validation rules for request data. Ensure your requests follow the specified data format and constraints to avoid validation errors. For example in the request body, the name field can only accept a `string` data type.
 
 
 ## Limitations of the API
@@ -223,4 +227,4 @@ While the provided Person API serves as a basic CRUD example, it has certain lim
 
 ## Contact Information
 
-For inquiry or support, please contact Rahmanakorede at rahmanakorede442@gmail.com.
+For inquiry promotion or support, contact RahmanAkorede at rahmanakorede442@gmail.com or +2347012803737

@@ -19,8 +19,7 @@ Follow these steps to clone and prepare the Laravel application:
 
 Clone the Laravel repository from Github using the following commands:
 
-```
-bash
+```bash
 git clone git@github.com:rahmanakorede442/hng_task_two.git
  ```
 
@@ -93,3 +92,6 @@ This will start a development server at `http://localhost:8000`. Access your Lar
 - **Web Server Configuration**: For production deployments, configure your web server (e.g., Apache, Nginx) to serve your Laravel application. Refer to Laravel's documentation for server configuration details.
 - **Environment Configuration**: Review and adjust the settings in the `.env` file as needed for your specific environment.
 - **Artisan Commands**: Laravel's Artisan command-line tool provides various commands to manage your application. Use `php artisan` to see the available commands and their descriptions.
+
+
+_I hope this helps._

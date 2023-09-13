@@ -15,7 +15,7 @@ class PersonController extends Controller
     public function index()
     {
         $data = Person::all();
-        return response(['data' => $data]);
+        return response(['data' => $data], 200);
     }
 
 
@@ -27,10 +27,7 @@ class PersonController extends Controller
         $person = Person::query()->create([
             'name' => $request->name,
         ]);
-        return response([
-            'message' => 'Person created!',
-            'person' => $person
-        ], 200);
+        return response($person, 200);
     }
 
     /**
@@ -43,9 +40,7 @@ class PersonController extends Controller
         } catch (Throwable $th) {
             return response(['error' => 'No record found'], 404);
         }
-        return response([
-            'person' => $person,
-        ], 200);
+        return response($person, 200);
     }
 
     /**
@@ -78,10 +73,10 @@ class PersonController extends Controller
         try {
             $person = Person::query()->findOrFail($id);
         } catch (Throwable $th) {
-            return response(['message' => 'No record found!'], 404);
+            return response(['error' => 'No record found!'], 404);
         }
 
         $person->forceDelete();
-        return response(['message' => 'Deleted!'], 200);
+        return response(['message' => "Person with Id $id has been deleted!"], 200);
     }
 }

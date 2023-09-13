@@ -14,9 +14,9 @@ We provide you with a simple and easy to use api for performing basic **CRUD ( C
     - [4. Update a Person]()
     - [5. Delete a Person]()
 - [Request and Response Examples]()
-- [Error Handling]()
-- [Authentication and Authorization]()
 - [Validation]()
+- [Limitation of the API]()
+- [Contact Information]()
     
 
 ## Getting Started
@@ -73,7 +73,8 @@ The API provides the following endpoints for managing the person resource:
 
 ### 1\. Create a Person
 
-- **Endpoint**: `POST /api/persons`
+- **Endpoint**: `POST /api`
+- **Description** : This creates/inserts a new person.
 - **Headers**: `Content-Type: application/json Accept: application/json`
 - **Request Body**: JSON object with person information, such as `name` .
 - **Response**: JSON object of the created person with an auto-generated `id`.
@@ -81,7 +82,8 @@ The API provides the following endpoints for managing the person resource:
 
 ### 2\. Get All Persons
 
-- **Endpoint**: `GET /api/`
+- **Endpoint**: `GET /api`
+- **Description** : This returns records of all persons.
 - **Headers**: `Content-Type: application/json Accept: application/json`
 - **Response**: JSON array of all persons in the database.
     
@@ -89,6 +91,7 @@ The API provides the following endpoints for managing the person resource:
 ### 3\. Get a Person by ID
 
 - **Endpoint**: `GET /api/{user_id}`
+- **Description** : This returns the details of a single person.
 - **Headers**: `Content-Type: application/json Accept: application/json`
 - **Response**: JSON object of the person with the specified `id` or customized error message **(404)** if person not found.
     
@@ -96,6 +99,7 @@ The API provides the following endpoints for managing the person resource:
 ### 4\. Update a Person
 
 - **Endpoint**: `PUT /api/{user_id}`
+- **Description** : This updates/edits the resource
 - **Headers**: `Content-Type: application/json Accept: application/json`
 - **Request Body**: JSON object with updated person information, such as `name`.
 - **Response**: JSON object of the updated person or customized error message **(404)** if person not found.
@@ -104,6 +108,7 @@ The API provides the following endpoints for managing the person resource:
 ### 5\. Delete a Person
 
 - **Endpoint**: `DELETE /api/{user_id}`
+- **Description** : This deletes a resource
 - **Headers**: `Content-Type: application/json Accept: application/json`
 - **Response**: JSON object of success message confirming the deletion.
     

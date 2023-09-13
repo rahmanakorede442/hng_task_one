@@ -55,7 +55,7 @@ class PersonController extends Controller
         }
 
         $person->update([
-            'name' => $request->only('name') ?? $person->name
+            'name' => $request->name ?? $person->name
         ]);
 
         if($person){

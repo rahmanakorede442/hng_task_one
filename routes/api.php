@@ -3,20 +3,15 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonController;
 
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
 
-Route::get('hng_slack', function (Request $request){
-    return response()->json([
-        'slack_name' => $request->slack_name,
-        'current_day' => date('m'),
-        'utc_time' => date('Y-m-d h:i:s'),
-        'track' => $request->track,
-        'github_file_url' => 'git@github.com:rahmanakorede442/hng_task_one.git',
-        'github_repo_url' => 'git@github.com:rahmanakorede442/hng_task_one.git',
-        'status_code' => 200
-    ]);
-});
+Route::post('/person', [PersonController::class, 'store']);
+Route::get('/person', [PersonController::class, 'index']);
+Route::get('/person/{user_id}', [PersonController::class, 'show']);
+Route::put('/person/{user_id}', [PersonController::class, 'update']);
+Route::delete('/person/{user_id}', [PersonController::class, 'destroy']);

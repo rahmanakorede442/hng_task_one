@@ -10,8 +10,8 @@ use App\Http\Controllers\PersonController;
 //     return $request->user();
 // });
 
-Route::post('/person', [PersonController::class, 'store']);
-Route::get('/person', [PersonController::class, 'index']);
-Route::get('/person/{user_id}', [PersonController::class, 'show']);
-Route::put('/person/{user_id}', [PersonController::class, 'update']);
-Route::delete('/person/{user_id}', [PersonController::class, 'destroy']);
+Route::post('/', [PersonController::class, 'store']);
+Route::get('/', [PersonController::class, 'index']);
+Route::get('/{user_id}', [PersonController::class, 'show']);
+Route::put('/{user_id}', [PersonController::class, 'update']);
+Route::delete('/{user_id}', [PersonController::class, 'destroy']);

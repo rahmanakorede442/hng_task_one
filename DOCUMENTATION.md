@@ -114,7 +114,7 @@ Here are some examples of how to use the API:
 
 ### 1\. Create a Person
 
-- `POST /api/persons   Content-Type: application/json`
+- `POST /api/   Content-Type: application/json`
 
 ```javascript
 {  
@@ -134,7 +134,7 @@ Here are some examples of how to use the API:
 
 ### 2\. Get All Persons
 
-- `GET /api/persons`
+- `GET /api/`
 - Responses:
 
 >Status code: 200
@@ -153,7 +153,7 @@ Here are some examples of how to use the API:
 
 ### 3\. Get a Person by ID
 
-- `GET /api/persons/1`
+- `GET /api/1`
 - Responses:
 
 >Status code: 200
@@ -174,7 +174,7 @@ Here are some examples of how to use the API:
 ```
 ### 4\. Update a Person
 
-- `PUT /api/persons/1  Content-Type: application/json`      
+- `PUT /api/1  Content-Type: application/json`      
 - Request body:
 
 ```javascript

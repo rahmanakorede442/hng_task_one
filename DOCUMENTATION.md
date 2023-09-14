@@ -147,9 +147,11 @@ Here are some examples of how to use the API:
 ```javascript
 [
     {  
+        "id" : 1,
         "name" : "Akorede Lamidi",
     },
     {  
+        "id" : 2,
         "name" : "Ifekunle",
     },   // More persons...
 ] 

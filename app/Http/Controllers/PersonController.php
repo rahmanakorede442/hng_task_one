@@ -14,7 +14,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $data = Person::all();
+        $data = Person::query()->oldest('id')->get();
         return response(['data' => $data], 200);
     }
 
